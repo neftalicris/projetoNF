@@ -1,0 +1,9 @@
+package br.com.sonner.cadastroNotaFiscal.repository;
+
+import br.com.sonner.cadastroNotaFiscal.orm.ItensNota;
+import br.com.sonner.cadastroNotaFiscal.orm.NotaFiscal;
+import br.com.sonner.cadastroNotaFiscal.orm.Produto;
+import org.springframework.data.repository.CrudRepository;
+
+public interface ItensNotaRepository extends CrudRepository<ItensNota, Integer> {
+}
