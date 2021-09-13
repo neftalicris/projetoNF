@@ -10,7 +10,7 @@ public class NotaFiscal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer codigo;
-    @OneToMany(mappedBy = "tb_cliente")
+  //  @OneToMany(mappedBy = "tb_cliente")
     private Integer codigo_cliente;
     private LocalDate data_nota;
 

@@ -8,14 +8,23 @@ import javax.persistence.criteria.CriteriaBuilder;
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer codigo;
+    private Integer id;
+    private String codigo;
     private String nome;
 
-    public Integer getCodigo() {
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(Integer codigo) {
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 
