@@ -13,6 +13,14 @@ public class Produto {
     private String descricao;
     private BigDecimal valor_unitario;
 
+//    public Produto(Integer id, String codigo, String descricao) {
+//        this.id = id;
+//        this.codigo = codigo;
+//        this.descricao = descricao;
+//        this.valor_unitario = valor_unitario;
+//    }
+
+
     public Integer getId() {
         return id;
     }

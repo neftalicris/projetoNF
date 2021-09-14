@@ -1,7 +1,9 @@
 package br.com.sonner.cadastroNotaFiscal.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name="tb_nota_fiscal")
@@ -14,8 +16,8 @@ public class NotaFiscal {
     @JoinColumn(name = "id_cliente")
     private Cliente cliente;
     private Date data_nota;
-//    @OneToMany(mappedBy = "nota", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-//    private List<ItensNota> itens;
+    @OneToMany(mappedBy = "nota", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<ItensNota> itens;
 
 
     public Integer getId() {

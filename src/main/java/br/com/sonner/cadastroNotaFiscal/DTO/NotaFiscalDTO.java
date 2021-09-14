@@ -1,27 +1,39 @@
 package br.com.sonner.cadastroNotaFiscal.DTO;
 
-import br.com.sonner.cadastroNotaFiscal.model.Cliente;
-import br.com.sonner.cadastroNotaFiscal.model.Produto;
 
+
+import br.com.sonner.cadastroNotaFiscal.model.Cliente;
+import br.com.sonner.cadastroNotaFiscal.model.NotaFiscal;
+
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ClienteDTO {
+public class NotaFiscalDTO {
     private String codigo;
-    private String nome;
+    private Date data;
+    private Integer id_cliente;
 
-    public ClienteDTO(Cliente cliente) {
-        this.codigo = cliente.getCodigo();
-        this.nome = cliente.getNome();
+
+
+    public NotaFiscalDTO(NotaFiscal notaFiscal) {
+        this.codigo = notaFiscal.getCodigo();
+        this.data = notaFiscal.getData_nota();
+        this.id_cliente = notaFiscal.getId();
     }
-    public static List<ClienteDTO> lista(List<Cliente> clientes) {
-        return clientes.stream().map(ClienteDTO::new).collect(Collectors.toList());
+    public static List<NotaFiscalDTO> lista(List<NotaFiscal> notaFiscal) {
+        return notaFiscal.stream().map(NotaFiscalDTO::new).collect(Collectors.toList());
     }
+
     public String getCodigo() {
         return codigo;
     }
 
-    public String getNome() {
-        return nome;
+    public Date getData() {
+        return data;
+    }
+
+    public Integer getId_cliente() {
+        return id_cliente;
     }
 }

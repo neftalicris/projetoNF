@@ -1,4 +1,4 @@
-package br.com.sonner.cadastroNotaFiscal.controler;
+package br.com.sonner.cadastroNotaFiscal.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

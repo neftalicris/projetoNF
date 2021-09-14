@@ -36,7 +36,7 @@ public class CadastroNotaFiscalApplication implements CommandLineRunner {
     public void run(String... args) throws Exception{
 //        Produto produto = new Produto();
 //        produto.setDescricao("MOUSE SEM FIO");
-//        produto.setValor_unitario();
+//        produto.setValor_unitario(BigDecimal.valueOf(30));
 //        produtoRepository.save(produto);
 //
 //        Cliente cliente = new Cliente();
@@ -44,14 +44,14 @@ public class CadastroNotaFiscalApplication implements CommandLineRunner {
 //        clienteRepository.save(cliente);
 //
 //        NotaFiscal notaFiscal = new NotaFiscal();
-//        notaFiscal.setData_nota();
+//        notaFiscal.setData_nota(2021-09-14);
 //        notaFiscal.setCliente();
 //        notaFiscalRepository.save(notaFiscal);
 //
 //        ItensNota itensNota = new ItensNota();
 //        itensNota.setProduto("MOUSE");
 //        itensNota.setQuantidade(BigDecimal.valueOf(1));
-//        itensNota.setNota(1);
+//        itensNota.setNota('1');
 //        itensNotaRepository.save(itensNota);
     }
 
