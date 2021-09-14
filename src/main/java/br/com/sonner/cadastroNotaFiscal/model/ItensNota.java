@@ -66,4 +66,5 @@ public class ItensNota {
     public void setValor_final(BigDecimal valor_final) {
         this.valor_final = valor_final;
     }
+
 }

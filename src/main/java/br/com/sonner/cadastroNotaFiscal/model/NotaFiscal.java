@@ -18,4 +18,35 @@ public class NotaFiscal {
 //    private List<ItensNota> itens;
 
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public Date getData_nota() {
+        return data_nota;
+    }
+
+    public void setData_nota(Date data_nota) {
+        this.data_nota = data_nota;
+    }
 }

@@ -12,6 +12,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.math.BigDecimal;
+
 @SpringBootApplication
 public class CadastroNotaFiscalApplication implements CommandLineRunner {
 
@@ -34,7 +36,7 @@ public class CadastroNotaFiscalApplication implements CommandLineRunner {
     public void run(String... args) throws Exception{
 //        Produto produto = new Produto();
 //        produto.setDescricao("MOUSE SEM FIO");
-//        produto.setValor_unitario(60);
+//        produto.setValor_unitario();
 //        produtoRepository.save(produto);
 //
 //        Cliente cliente = new Cliente();
@@ -42,15 +44,14 @@ public class CadastroNotaFiscalApplication implements CommandLineRunner {
 //        clienteRepository.save(cliente);
 //
 //        NotaFiscal notaFiscal = new NotaFiscal();
-//       // Date data= new Date();
-//      //  notaFiscal.setData_nota();
-//        notaFiscal.setCodigo_cliente(1);
+//        notaFiscal.setData_nota();
+//        notaFiscal.setCliente();
 //        notaFiscalRepository.save(notaFiscal);
 //
 //        ItensNota itensNota = new ItensNota();
-//        itensNota.setCodigo_produto(1);
-//        itensNota.setQuantidade();
-//        itensNota.setCodigo_nota(1);
+//        itensNota.setProduto("MOUSE");
+//        itensNota.setQuantidade(BigDecimal.valueOf(1));
+//        itensNota.setNota(1);
 //        itensNotaRepository.save(itensNota);
     }
 
