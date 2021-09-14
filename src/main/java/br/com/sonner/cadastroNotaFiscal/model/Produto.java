@@ -1,4 +1,4 @@
-package br.com.sonner.cadastroNotaFiscal.orm;
+package br.com.sonner.cadastroNotaFiscal.model;
 
 import javax.persistence.*;
 import java.math.BigDecimal;

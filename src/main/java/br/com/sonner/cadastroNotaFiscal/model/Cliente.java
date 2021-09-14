@@ -1,7 +1,6 @@
-package br.com.sonner.cadastroNotaFiscal.orm;
+package br.com.sonner.cadastroNotaFiscal.model;
 
 import javax.persistence.*;
-import javax.persistence.criteria.CriteriaBuilder;
 
 @Entity
 @Table(name="tb_cliente")

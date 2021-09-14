@@ -1,7 +1,6 @@
-package br.com.sonner.cadastroNotaFiscal.orm;
+package br.com.sonner.cadastroNotaFiscal.model;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -11,8 +10,12 @@ public class NotaFiscal {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String codigo;
-    private Integer codigo_cliente;
-    private LocalDate data_nota;
+    @ManyToOne
+    @JoinColumn(name = "id_cliente")
+    private Cliente cliente;
+    private Date data_nota;
+//    @OneToMany(mappedBy = "nota", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+//    private List<ItensNota> itens;
 
 
 }

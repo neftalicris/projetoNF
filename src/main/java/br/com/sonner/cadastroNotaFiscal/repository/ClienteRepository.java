@@ -1,6 +1,6 @@
 package br.com.sonner.cadastroNotaFiscal.repository;
 
-import br.com.sonner.cadastroNotaFiscal.orm.Cliente;
+import br.com.sonner.cadastroNotaFiscal.model.Cliente;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
