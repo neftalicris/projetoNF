@@ -1,13 +1,13 @@
 package br.com.sonner.cadastroNotaFiscal.controller.form;
 
-import br.com.sonner.cadastroNotaFiscal.model.Cliente;
+import br.com.sonner.cadastroNotaFiscal.model.Produto;
 
 import java.math.BigDecimal;
 
 public class ProdutoFormDTO {
     private String codigo;
     private String descricao;
-    private BigDecimal valor_unitario;
+    private BigDecimal valorUnitario;
 
     public String getCodigo() {
         return codigo;
@@ -25,11 +25,15 @@ public class ProdutoFormDTO {
         this.descricao = descricao;
     }
 
-    public BigDecimal getValor_unitario() {
-        return valor_unitario;
+    public BigDecimal getValorUnitario() {
+        return valorUnitario;
     }
 
-    public void setValor_unitario(BigDecimal valor_unitario) {
-        this.valor_unitario = valor_unitario;
+    public void setValorUnitario(BigDecimal valorUnitario) {
+        this.valorUnitario = valorUnitario;
     }
+    public Produto converter() {
+        return new Produto(codigo, descricao, valorUnitario);
+    }
+
 }
