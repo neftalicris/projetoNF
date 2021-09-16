@@ -2,9 +2,12 @@ package br.com.sonner.cadastroNotaFiscal.controller.form;
 
 import br.com.sonner.cadastroNotaFiscal.model.Cliente;
 
-public class ClienteFormDTO {
+import java.math.BigDecimal;
+
+public class ProdutoFormDTO {
     private String codigo;
-    private String nome;
+    private String descricao;
+    private BigDecimal valor_unitario;
 
     public String getCodigo() {
         return codigo;
@@ -14,15 +17,19 @@ public class ClienteFormDTO {
         this.codigo = codigo;
     }
 
-    public String getNome() {
-        return nome;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
-    public Cliente converter() {
-        return new Cliente(codigo, nome);
+    public BigDecimal getValor_unitario() {
+        return valor_unitario;
+    }
+
+    public void setValor_unitario(BigDecimal valor_unitario) {
+        this.valor_unitario = valor_unitario;
     }
 }
