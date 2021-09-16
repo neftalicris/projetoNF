@@ -1,34 +1,13 @@
-package br.com.sonner.cadastroNotaFiscal.model;
+package br.com.sonner.cadastroNotaFiscal.controller.form;
 
-import javax.persistence.*;
+import br.com.sonner.cadastroNotaFiscal.model.Produto;
+
 import java.math.BigDecimal;
 
-@Entity
-@Table(name="tb_produto")
-public class Produto {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+public class ProdutoFormDTO {
     private String codigo;
     private String descricao;
     private BigDecimal valor_unitario;
-
-    public Produto(String codigo, String descricao, BigDecimal valor_unitario) {
-        this.codigo = codigo;
-        this.descricao = descricao;
-        this.valor_unitario = valor_unitario;
-    }
-
-    public Produto() {
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getCodigo() {
         return codigo;
@@ -53,5 +32,9 @@ public class Produto {
     public void setValor_unitario(BigDecimal valor_unitario) {
         this.valor_unitario = valor_unitario;
     }
-}
 
+    public Produto converter() {
+        return new Produto(codigo, descricao, valor_unitario);
+    }
+
+}
