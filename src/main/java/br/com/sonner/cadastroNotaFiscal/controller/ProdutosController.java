@@ -25,12 +25,9 @@ public class ProdutosController {
     @Autowired
     private ProdutoRepository produtoRepository;
 
-//    @RequestMapping("/produtos")
-//    @ResponseBody
+
     @GetMapping
     public List<ProdutoDTO> lista(){
-//        Produto produto = new Produto(1,"1","MOUSE");
-//        return ProdutoDTO.lista(Arrays.asList(produto));
         List<Produto> produtos = (List<Produto>) produtoRepository.findAll();
         return ProdutoDTO.lista(produtos);
     }

@@ -11,12 +11,12 @@ public class Produto {
     private Integer id;
     private String codigo;
     private String descricao;
-    private BigDecimal valorUnitario;
+    private BigDecimal valor_unitario;
 
-    public Produto(String codigo, String descricao, BigDecimal valorUnitario) {
+    public Produto(String codigo, String descricao, BigDecimal valor_unitario) {
         this.codigo = codigo;
         this.descricao = descricao;
-        this.valorUnitario = valorUnitario;
+        this.valor_unitario = valor_unitario;
     }
 
     public Produto() {
@@ -46,12 +46,12 @@ public class Produto {
         this.descricao = descricao;
     }
 
-    public BigDecimal getValorUnitario() {
-        return valorUnitario;
+    public BigDecimal getValor_unitario() {
+        return valor_unitario;
     }
 
-    public void setValorUnitario(BigDecimal valorUnitario) {
-        this.valorUnitario = valorUnitario;
+    public void setValor_unitario(BigDecimal valor_unitario) {
+        this.valor_unitario = valor_unitario;
     }
 }
 

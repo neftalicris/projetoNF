@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 public class ProdutoFormDTO {
     private String codigo;
     private String descricao;
-    private BigDecimal valorUnitario;
+    private BigDecimal valor_unitario;
 
     public String getCodigo() {
         return codigo;
@@ -25,15 +25,16 @@ public class ProdutoFormDTO {
         this.descricao = descricao;
     }
 
-    public BigDecimal getValorUnitario() {
-        return valorUnitario;
+    public BigDecimal getValor_unitario() {
+        return valor_unitario;
     }
 
-    public void setValorUnitario(BigDecimal valorUnitario) {
-        this.valorUnitario = valorUnitario;
+    public void setValor_unitario(BigDecimal valor_unitario) {
+        this.valor_unitario = valor_unitario;
     }
+
     public Produto converter() {
-        return new Produto(codigo, descricao, valorUnitario);
+        return new Produto(codigo, descricao, valor_unitario);
     }
 
 }
