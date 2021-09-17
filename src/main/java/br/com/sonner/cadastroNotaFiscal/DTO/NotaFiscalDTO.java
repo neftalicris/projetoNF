@@ -12,14 +12,14 @@ import java.util.stream.Collectors;
 public class NotaFiscalDTO {
     private String codigo;
     private Date data;
-    private Integer id_cliente;
+    private Cliente id_cliente;
 
 
 
     public NotaFiscalDTO(NotaFiscal notaFiscal) {
         this.codigo = notaFiscal.getCodigo();
         this.data = notaFiscal.getData_nota();
-        this.id_cliente = notaFiscal.getId();
+        this.id_cliente = notaFiscal.getCliente();
     }
     public static List<NotaFiscalDTO> lista(List<NotaFiscal> notaFiscal) {
         return notaFiscal.stream().map(NotaFiscalDTO::new).collect(Collectors.toList());
@@ -33,7 +33,7 @@ public class NotaFiscalDTO {
         return data;
     }
 
-    public Integer getId_cliente() {
+    public Cliente getId_cliente() {
         return id_cliente;
     }
 }
