@@ -19,6 +19,14 @@ public class NotaFiscal {
     @OneToMany(mappedBy = "nota", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<ItensNota> itens;
 
+    public NotaFiscal(String codigo, Cliente cliente, Date data_nota) {
+        this.codigo = codigo;
+        this.cliente = cliente;
+        this.data_nota = data_nota;
+    }
+
+    public NotaFiscal() {
+    }
 
     public Integer getId() {
         return id;
