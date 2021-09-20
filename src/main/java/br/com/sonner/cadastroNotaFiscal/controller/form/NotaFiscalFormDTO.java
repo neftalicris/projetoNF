@@ -10,10 +10,18 @@ import java.util.Date;
 import java.util.List;
 
 public class NotaFiscalFormDTO {
+    private Integer id;
     private String codigo;
     private String nomeCliente;
     private Date data_nota;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getNomeCliente() {
         return nomeCliente;

@@ -25,11 +25,24 @@ public class ClienteController {
         return ClienteDTO.lista(clientes);
 
     }
-    @PostMapping
-    public ResponseEntity<ClienteDTO> cadastrar(@RequestBody ClienteFormDTO clienteForm, UriComponentsBuilder uriBuilder){
-        Cliente cliente = clienteForm.converter();
-        clienteRepository.save(cliente);
-        URI uri = uriBuilder.path("/cliente/{id}").buildAndExpand(cliente.getId()).toUri();
-        return ResponseEntity.created(uri).body(new ClienteDTO(cliente));
+    @PostMapping("/")
+    public Cliente salvar(@RequestBody Cliente cliente){
+        cliente = clienteRepository.save(cliente);
+        return cliente;
     }
+    @PutMapping("/")
+    public Cliente alterar(@RequestBody Cliente cliente){
+        cliente = clienteRepository.save(cliente);
+        return cliente;
+    }
+    @DeleteMapping("/{id}")
+    public void deletar(@PathVariable("id") Integer id){
+        clienteRepository.deleteById(id);
+    }
+//    public ResponseEntity<ClienteDTO> cadastrar(@RequestBody ClienteFormDTO clienteForm, UriComponentsBuilder uriBuilder){
+//        Cliente cliente = clienteForm.converter();
+//        clienteRepository.save(cliente);
+//        URI uri = uriBuilder.path("/cliente/{id}").buildAndExpand(cliente.getId()).toUri();
+//        return ResponseEntity.created(uri).body(new ClienteDTO(cliente));
+//    }
 }
