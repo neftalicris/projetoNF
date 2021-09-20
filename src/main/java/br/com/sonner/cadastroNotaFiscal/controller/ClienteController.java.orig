@@ -27,6 +27,8 @@ public class ClienteController {
         return ClienteDTO.lista(clientes);
     }
 
+<<<<<<< HEAD
+=======
     @GetMapping("/")
     public List<Cliente> lista() {
         List<Cliente> clientes = (List<Cliente>) clienteRepository.findAll();
@@ -38,12 +40,15 @@ public class ClienteController {
     }
 */
 
+>>>>>>> implementacoes nas interacoes.
     @PostMapping("/")
     public Cliente salvar(@RequestBody Cliente cliente){
         cliente = clienteRepository.save(cliente);
         return cliente;
     }
 
+<<<<<<< HEAD
+=======
     @PutMapping("/")
     public Cliente alterar(@RequestBody Cliente cliente){
         cliente = clienteRepository.save(cliente);
@@ -54,7 +59,7 @@ public class ClienteController {
     public void deletar(@PathVariable("id") Integer id){
         clienteRepository.deleteById(id);
     }
-
+>>>>>>> implementacoes nas interacoes.
     @PutMapping("/")
     public Cliente alterar(@RequestBody Cliente cliente){
         cliente = clienteRepository.save(cliente);

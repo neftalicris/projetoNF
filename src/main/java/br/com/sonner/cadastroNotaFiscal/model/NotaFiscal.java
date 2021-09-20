@@ -64,4 +64,12 @@ public class NotaFiscal {
     public void setData_nota(Date data_nota) {
         this.data_nota = data_nota;
     }
+
+    public List<ItensNota> getItens() {
+        return itens;
+    }
+
+    public void setItens(List<ItensNota> itens) {
+        this.itens = itens;
+    }
 }
