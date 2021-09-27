@@ -4,11 +4,11 @@ import br.com.sonner.cadastroNotaFiscal.DTO.ClienteDTO;
 import br.com.sonner.cadastroNotaFiscal.DTO.ItensNotaDTO;
 import br.com.sonner.cadastroNotaFiscal.model.Cliente;
 import br.com.sonner.cadastroNotaFiscal.model.ItensNota;
+import br.com.sonner.cadastroNotaFiscal.model.NotaFiscal;
 import br.com.sonner.cadastroNotaFiscal.repository.ClienteRepository;
 import br.com.sonner.cadastroNotaFiscal.repository.ItensNotaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,5 +22,20 @@ public class ItensNotaController {
         List<ItensNota> itensNotas = (List<ItensNota>) itensNotaRepository.findAll();
         return ItensNotaDTO.lista(itensNotas);
 
+    }
+
+    @PostMapping("/")
+    public ItensNota salvar(@RequestBody ItensNota itensNota){
+        itensNota = itensNotaRepository.save(itensNota);
+        return itensNota;
+    }
+    @PutMapping("/")
+    public ItensNota alterar(@RequestBody ItensNota itensNota){
+        itensNota = itensNotaRepository.save(itensNota);
+        return itensNota;
+    }
+    @DeleteMapping("/{id}")
+    public void deletar(@PathVariable("id") Integer id){
+        itensNotaRepository.deleteById(id);
     }
 }
