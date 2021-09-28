@@ -12,6 +12,7 @@ public class ClienteDTO {
     private String nome;
 
     public ClienteDTO(Cliente cliente) {
+        this.id = cliente.getId();
         this.codigo = cliente.getCodigo();
         this.nome = cliente.getNome();
     }

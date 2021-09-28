@@ -21,7 +21,6 @@ public class ItensNotaController {
     public List<ItensNotaDTO> lista() {
         List<ItensNota> itensNotas = (List<ItensNota>) itensNotaRepository.findAll();
         return ItensNotaDTO.lista(itensNotas);
-
     }
 
     @PostMapping("/")
