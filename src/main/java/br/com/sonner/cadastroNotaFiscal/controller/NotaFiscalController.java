@@ -20,8 +20,10 @@ import java.util.List;
 @RestController
 @RequestMapping("/notafiscal")
 public class NotaFiscalController {
+
     @Autowired
     private NotaFiscalRepository notaFiscalRepository;
+
     @Autowired
     private ClienteRepository clienteRepository;
 
@@ -36,13 +38,16 @@ public class NotaFiscalController {
         notaFiscal = notaFiscalRepository.save(notaFiscal);
         return notaFiscal;
     }
+
     @PutMapping("/")
     public NotaFiscal alterar(@RequestBody NotaFiscal notaFiscal){
         notaFiscal = notaFiscalRepository.save(notaFiscal);
         return notaFiscal;
     }
+
     @DeleteMapping("/{id}")
     public void deletar(@PathVariable("id") Integer id){
+
         notaFiscalRepository.deleteById(id);
     }
 //    @PostMapping

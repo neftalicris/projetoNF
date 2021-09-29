@@ -13,11 +13,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/itensnota")
 public class ItensNotaController {
+
     @Autowired
     private ItensNotaRepository itensNotaRepository;
 
-    @RequestMapping("/itensnota")
+    @GetMapping("/")
     public List<ItensNotaDTO> lista() {
         List<ItensNota> itensNotas = (List<ItensNota>) itensNotaRepository.findAll();
         return ItensNotaDTO.lista(itensNotas);
@@ -28,11 +30,13 @@ public class ItensNotaController {
         itensNota = itensNotaRepository.save(itensNota);
         return itensNota;
     }
+
     @PutMapping("/")
     public ItensNota alterar(@RequestBody ItensNota itensNota){
         itensNota = itensNotaRepository.save(itensNota);
         return itensNota;
     }
+
     @DeleteMapping("/{id}")
     public void deletar(@PathVariable("id") Integer id){
         itensNotaRepository.deleteById(id);

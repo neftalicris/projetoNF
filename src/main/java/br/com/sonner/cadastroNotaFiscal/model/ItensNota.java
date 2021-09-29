@@ -9,15 +9,24 @@ public class ItensNota {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private Integer numero;
-    @ManyToOne
-    @JoinColumn(name = "id_produto")
-    private Produto produto;
-    private BigDecimal quantidade;
+
     @ManyToOne
     @JoinColumn(name = "id_nota")
     private NotaFiscal nota;
+
+    private Integer numero;
+
+    @ManyToOne
+    @JoinColumn(name = "id_produto")
+    private Produto produto;
+
+    private BigDecimal quantidade;
+
     private BigDecimal valor_final;
+
+
+
+
 
     public Integer getId() {
         return id;
