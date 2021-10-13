@@ -1,12 +1,15 @@
 package br.com.sonner.cadastroNotaFiscal.model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 @Entity
 @Table(name="tb_nota_fiscal")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class NotaFiscal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,7 +19,7 @@ public class NotaFiscal {
     @JoinColumn(name = "id_cliente")
     private Cliente cliente;
     private Date data_nota;
-    @OneToMany(mappedBy = "nota", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "id_nota", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<ItensNota> itens;
 
 

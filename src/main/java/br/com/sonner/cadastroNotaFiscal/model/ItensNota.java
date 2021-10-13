@@ -12,7 +12,7 @@ public class ItensNota {
     private Integer numero;
     @ManyToOne
     @JoinColumn(name = "id_produto")
-    private Produto produto;
+    private Produto id_produto;
     private BigDecimal quantidade;
     @ManyToOne
     @JoinColumn(name = "id_nota")
@@ -35,12 +35,12 @@ public class ItensNota {
         this.numero = numero;
     }
 
-    public Produto getProduto() {
-        return produto;
+    public Produto getId_produto() {
+        return id_produto;
     }
 
-    public void setProduto(Produto produto) {
-        this.produto = produto;
+    public void setId_produto(Produto produto) {
+        this.id_produto = produto;
     }
 
     public BigDecimal getQuantidade() {
@@ -51,12 +51,12 @@ public class ItensNota {
         this.quantidade = quantidade;
     }
 
-    public NotaFiscal getNota() {
-        return nota;
+    public NotaFiscal getId_nota() {
+        return id_nota;
     }
 
-    public void setNota(NotaFiscal nota) {
-        this.nota = nota;
+    public void setId_nota(NotaFiscal nota) {
+        this.id_nota = nota;
     }
 
     public BigDecimal getValor_final() {

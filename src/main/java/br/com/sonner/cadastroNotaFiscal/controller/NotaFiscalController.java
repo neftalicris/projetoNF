@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class NotaFiscalController {
@@ -18,9 +19,24 @@ public class NotaFiscalController {
     private NotaFiscalRepository notaFiscalRepository;
 
     @RequestMapping("/notafiscal")
+    @GetMapping("/{id}")
+    public NotaFiscal get(@PathVariable("id") Integer id) {
+        Optional<NotaFiscal> nf = notaFiscalRepository.findById(id);
+        return nf.get();
+    }
+
     public List<NotaFiscalDTO> lista() {
         List<NotaFiscal> notaFiscal = (List<NotaFiscal>) notaFiscalRepository.findAll();
         return NotaFiscalDTO.lista(notaFiscal);
 
     }
+
+
+//    @PostMapping("/")
+//    public NotaFiscal salvar(@RequestBody NotaFiscal notaFiscal, ItensNota itensNota){
+//        notaFiscal = notaFiscalRepository.save(notaFiscal);
+//        itensNota = itensNotaRepository.save(itensNota);
+//        itensNotaController.salvar(itensNota);
+//        return notaFiscal;
+//    }
 }
