@@ -5,10 +5,13 @@ import javax.persistence.*;
 @Entity
 @Table(name="tb_cliente")
 public class Cliente {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     private String codigo;
+
     private String nome;
 
     public Cliente() {
