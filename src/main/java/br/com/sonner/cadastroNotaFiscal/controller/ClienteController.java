@@ -16,20 +16,31 @@ import java.util.List;
 @RestController
 @RequestMapping("/cliente")
 public class ClienteController {
+
     @Autowired
     private ClienteRepository clienteRepository;
 
-    @GetMapping
+    @GetMapping("/")
     public List<ClienteDTO> lista() {
         List<Cliente> clientes = (List<Cliente>) clienteRepository.findAll();
         return ClienteDTO.lista(clientes);
+    }
 
+    @PostMapping("/")
+    public Cliente salvar(@RequestBody Cliente cliente){
+        cliente = clienteRepository.save(cliente);
+        return cliente;
     }
-    @PostMapping
-    public ResponseEntity<ClienteDTO> cadastrar(@RequestBody ClienteFormDTO clienteForm, UriComponentsBuilder uriBuilder){
-        Cliente cliente = clienteForm.converter();
-        clienteRepository.save(cliente);
-        URI uri = uriBuilder.path("/cliente/{id}").buildAndExpand(cliente.getId()).toUri();
-        return ResponseEntity.created(uri).body(new ClienteDTO(cliente));
+
+    @PutMapping("/")
+    public Cliente alterar(@RequestBody Cliente cliente){
+        cliente = clienteRepository.save(cliente);
+        return cliente;
     }
+
+    @DeleteMapping("/{id}")
+    public void deletar(@PathVariable("id") Integer id){
+        clienteRepository.deleteById(id);
+    }
+
 }

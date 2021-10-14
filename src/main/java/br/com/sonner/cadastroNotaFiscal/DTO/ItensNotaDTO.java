@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class ItensNotaDTO {
+    private Integer id;
     private Integer numero;
     private BigDecimal quantidade;
     private BigDecimal valor_final;
@@ -16,14 +17,19 @@ public class ItensNotaDTO {
     private Produto produto;
 
     public ItensNotaDTO(ItensNota itensNota) {
+        this.id = itensNota.getId();
         this.numero = itensNota.getNumero();
         this.quantidade = itensNota.getQuantidade();
         this.valor_final = itensNota.getValor_final();
         this.nota = itensNota.getId_nota();
-        this.produto = itensNota.getId_produto();
+        this.produto = itensNota.getProduto();
     }
     public static List<ItensNotaDTO> lista(List<ItensNota> itensNotas) {
         return itensNotas.stream().map(ItensNotaDTO::new).collect(Collectors.toList());
+    }
+
+    public Integer getId() {
+        return id;
     }
 
     public Integer getNumero() {

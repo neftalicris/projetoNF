@@ -9,15 +9,24 @@ public class ItensNota {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private Integer numero;
-    @ManyToOne
-    @JoinColumn(name = "id_produto")
-    private Produto id_produto;
-    private BigDecimal quantidade;
+
     @ManyToOne
     @JoinColumn(name = "id_nota")
     private NotaFiscal nota;
+
+    private Integer numero;
+
+    @ManyToOne
+    @JoinColumn(name = "id_produto")
+    private Produto produto;
+
+    private BigDecimal quantidade;
+
     private BigDecimal valor_final;
+
+
+
+
 
     public Integer getId() {
         return id;
@@ -35,12 +44,12 @@ public class ItensNota {
         this.numero = numero;
     }
 
-    public Produto getId_produto() {
-        return id_produto;
+    public Produto getProduto() {
+        return produto;
     }
 
-    public void setId_produto(Produto produto) {
-        this.id_produto = produto;
+    public void setProduto(Produto produto) {
+        this.produto = produto;
     }
 
     public BigDecimal getQuantidade() {
@@ -51,12 +60,12 @@ public class ItensNota {
         this.quantidade = quantidade;
     }
 
-    public NotaFiscal getId_nota() {
-        return id_nota;
+    public NotaFiscal getNota() {
+        return nota;
     }
 
-    public void setId_nota(NotaFiscal nota) {
-        this.id_nota = nota;
+    public void setNota(NotaFiscal nota) {
+        this.nota = nota;
     }
 
     public BigDecimal getValor_final() {

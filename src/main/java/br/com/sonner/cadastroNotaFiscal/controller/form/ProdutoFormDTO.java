@@ -5,9 +5,18 @@ import br.com.sonner.cadastroNotaFiscal.model.Produto;
 import java.math.BigDecimal;
 
 public class ProdutoFormDTO {
+    private Integer id;
     private String codigo;
     private String descricao;
     private BigDecimal valor_unitario;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getCodigo() {
         return codigo;
