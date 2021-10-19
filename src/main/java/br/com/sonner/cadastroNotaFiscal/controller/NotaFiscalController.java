@@ -27,22 +27,11 @@ public class NotaFiscalController {
     private NotaFiscalRepository notaFiscalRepository;
 
 
-    @RequestMapping("/notafiscal")
     @GetMapping("/{id}")
     public NotaFiscal get(@PathVariable("id") Integer id) {
         Optional<NotaFiscal> nf = notaFiscalRepository.findById(id);
         return nf.get();
     }
-
-
-    @Autowired
-    private ClienteRepository clienteRepository;
-
-    @Autowired
-    private ItensNotaRepository itensNotaRepository;
-
-    private  ItensNotaController itensNotaController;
-
 
 
     @GetMapping("/")

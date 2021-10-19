@@ -7,11 +7,14 @@ import br.com.sonner.cadastroNotaFiscal.model.ItensNota;
 import br.com.sonner.cadastroNotaFiscal.model.NotaFiscal;
 import br.com.sonner.cadastroNotaFiscal.repository.ClienteRepository;
 import br.com.sonner.cadastroNotaFiscal.repository.ItensNotaRepository;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 @RestController
 @RequestMapping("/itensnota")
 public class ItensNotaController {

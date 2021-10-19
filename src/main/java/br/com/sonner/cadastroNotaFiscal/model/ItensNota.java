@@ -1,11 +1,15 @@
 package br.com.sonner.cadastroNotaFiscal.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 @Entity
 @Table(name="tb_itens_notas")
-public class ItensNota {
+public class ItensNota  implements Serializable {
+
+    private static final Long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
