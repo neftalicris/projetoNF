@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 
 @Entity
 @Table(name="tb_itens_notas")
-public class ItensNota  implements Serializable {
+public class ItensNota implements Serializable {
 
     private static final Long serialVersionUID = 1L;
 

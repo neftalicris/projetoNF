@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+
 @RestController
 @RequestMapping("/itensnota")
 public class ItensNotaController {
@@ -40,6 +40,7 @@ public class ItensNotaController {
         return itensNota;
     }
 
+    //Não deleta individualmente o item, necessário deletar a nota fiscal,essa deleterá o item
     @DeleteMapping("/{id}")
     public void deletar(@PathVariable("id") Integer id){
         itensNotaRepository.deleteById(id);
