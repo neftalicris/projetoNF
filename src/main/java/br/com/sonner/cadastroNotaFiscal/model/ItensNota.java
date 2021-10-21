@@ -1,11 +1,14 @@
 package br.com.sonner.cadastroNotaFiscal.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 @Entity
 @Table(name="tb_itens_notas")
-public class ItensNota {
+public class ItensNota implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,7 +22,7 @@ public class ItensNota {
 
     @ManyToOne
     @JoinColumn(name = "id_produto")
-    private Produto id_produto;
+    private Produto produto;
 
     private BigDecimal quantidade;
 
@@ -43,12 +46,12 @@ public class ItensNota {
         this.numero = numero;
     }
 
-    public Produto getId_produto() {
-        return id_produto;
+    public Produto getProduto() {
+        return produto;
     }
 
-    public void setId_produto(Produto produto) {
-        this.id_produto = produto;
+    public void setProduto(Produto produto) {
+        this.produto = produto;
     }
 
     public BigDecimal getQuantidade() {

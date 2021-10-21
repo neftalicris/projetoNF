@@ -2,15 +2,20 @@ package br.com.sonner.cadastroNotaFiscal.model;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
 @Entity
 @Table(name="tb_nota_fiscal")
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
-public class NotaFiscal {
+public class NotaFiscal implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -21,20 +26,13 @@ public class NotaFiscal {
     @JoinColumn(name = "id_cliente")
     private Cliente cliente;
 
+    @Temporal(TemporalType.TIMESTAMP)
     private Date data_nota;
 
-    @OneToMany(mappedBy = "nota", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "nota", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<ItensNota> itens;
 
 
-    public NotaFiscal(String codigo, Cliente cliente, Date data_nota) {
-        this.codigo = codigo;
-        this.cliente = cliente;
-        this.data_nota = data_nota;
-    }
-
-    public NotaFiscal() {
-    }
 
     public Integer getId() {
         return id;
@@ -66,5 +64,13 @@ public class NotaFiscal {
 
     public void setData_nota(Date data_nota) {
         this.data_nota = data_nota;
+    }
+
+    public List<ItensNota> getItens() {
+        return itens;
+    }
+
+    public void setItens(List<ItensNota> itens) {
+        this.itens = itens;
     }
 }

@@ -30,8 +30,8 @@ public class ClienteFormDTO {
     public void setNome(String nome) {
         this.nome = nome;
     }
-//
-//    public Cliente converter() {
-//        return new Cliente(codigo, nome);
-//    }
+
+    public Cliente converter() {
+        return new Cliente(codigo, nome);
+    }
 }

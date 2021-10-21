@@ -20,7 +20,7 @@ public class ItensNotaDTO {
         this.quantidade = itensNota.getQuantidade();
         this.valor_final = itensNota.getValor_final();
         this.nota = itensNota.getNota();
-        this.produto = itensNota.getId_produto();
+        this.produto = itensNota.getProduto();
     }
     public static List<ItensNotaDTO> lista(List<ItensNota> itensNotas) {
         return itensNotas.stream().map(ItensNotaDTO::new).collect(Collectors.toList());
