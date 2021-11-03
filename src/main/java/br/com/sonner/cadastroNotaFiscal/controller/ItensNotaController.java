@@ -24,12 +24,17 @@ public class ItensNotaController {
     private ItensNotaRepository itensNotaRepository;
 
 
+//    @GetMapping("/{id}")
+//    public ItensNota get(@PathVariable("id") Integer id) {
+//        Optional<ItensNota> iNota = itensNotaRepository.findById(id);
+//        return iNota.get();
+//    }
+
     @GetMapping("/{id}")
     public ItensNota get(@PathVariable("id") Integer id) {
         Optional<ItensNota> iNota = itensNotaRepository.findById(id);
         return iNota.get();
     }
-
 
     @GetMapping("/")
     public List<ItensNotaDTO> lista() {
